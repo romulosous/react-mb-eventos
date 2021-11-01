@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
 import "./signin.css"
-import logo from "../../assets/lateral-image.jpg"
 
 
 function SignIn() {
