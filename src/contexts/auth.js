@@ -22,8 +22,55 @@ function AuthProvider({ children }) {
     loadStorage();
   }, [])
 
+  async function signUp(email, password, name) {
+    setLoadingAuth(true)
+    await firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(async (value) => {
+        const uid = value.user.uid
+
+        await firebase.firestore().collection('users')
+          .doc(uid).set({
+            nome: name,
+            avatarUrl: null
+          })
+          .then(() => {
+            const data = {
+              uid: uid,
+              nome: name,
+              email: value.user.email,
+              avatarUrl: null
+            }
+
+            setUser(data)
+            storageUser(data)
+            setLoadingAuth(false)
+          })
+      })
+      .catch((error) => {
+        console.log(error)
+        setLoadingAuth(false)
+      })
+  }
+
+  async function signOut() {
+    await firebase.auth().signOut();
+    localStorage.removeItem('SistemaUser')
+    setUser(null)
+  }
+
+  function storageUser(data) {
+    localStorage.setItem('SistemaUser', JSON.stringify(data))
+  }
+
   return (
-    <AuthContext.Provider value={{ signed: !!user, user, loading }} >
+    <AuthContext.Provider
+      value={{
+        signed: !!user,
+        user,
+        loading,
+        signUp,
+        signOut
+      }} >
       {children}
     </AuthContext.Provider>
   )
