@@ -2,6 +2,7 @@ import { useState } from "react"
 import EventCard from "../../components/EventCard"
 import "./home.css"
 
+import Header from "../../components/Header"
 export default function Dashboard() {
   const events = [{
     id: "1",
@@ -158,36 +159,30 @@ export default function Dashboard() {
 
 
   return (
-    <div className="container-home">
-      <div className="d-flex justify-content-center">
-        <form className="formSearchPost" onSubmit={() => { }}>
-          <input
-            type="text"
-            placeholder="Encontrar eventos"
-            className="mb-1"
-          />
-        </form>
-      </div>
+    <div>
+      <Header />
+      <div className="container-home">
 
-      {!!events.length && <div>
-        <h2 className="title-events">Eventos on-line</h2>
-        <div className="events">
-          {
-            events.map((event) => (
-              <EventCard
-                key={event.id}
-                cover={event.cover}
-                title={event.title}
-                description={event.description}
+        {!!events.length && <div>
+          <h2 className="title-events">Eventos on-line</h2>
+          <div className="events">
+            {
+              events.map((event) => (
+                <EventCard
+                  key={event.id}
+                  cover={event.cover}
+                  title={event.title}
+                  description={event.description}
 
-              />
-            ))
-          }
+                />
+              ))
+            }
+          </div>
         </div>
-      </div>
-      }
+        }
 
-      {!events.length && <p className="text-center">Events not found with this title =)</p>}
+        {!events.length && <p className="text-center">Events not found with this title =)</p>}
+      </div>
     </div>
   )
 }

@@ -23,7 +23,7 @@ export default function RouteWrapper({
     return <Redirect to="/login" />
   }
 
-  if (signed && !isPrivate && location.pathname !== "/") {
+  if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />
   }
 

@@ -5,10 +5,14 @@ import "./header.css"
 export default function Header() {
   return (
     <header>
-      <Link className="logo" to="/">MB Event</Link>
-      <input type="text" placeholder="buscar eventos" />
-      <span>Criar um evento</span>
-      <span>romulo</span>
+      <div className="search">
+        <Link className="logo" to="/">MB Event</Link>
+        <input type="text" placeholder="buscar eventos" />
+      </div>
+      <div className="links-header">
+        <Link>Criar um evento</Link>
+        <Link>romulo@gmail.com</Link>
+      </div>
     </header>
   )
 }
