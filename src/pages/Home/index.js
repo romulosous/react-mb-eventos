@@ -3,7 +3,6 @@ import EventCard from "../../components/EventCard"
 import "./home.css"
 
 export default function Dashboard() {
-  const title = "First Home"
   const events = [{
     id: "1",
     title: "Event Go",
@@ -157,9 +156,6 @@ export default function Dashboard() {
   ]
 
 
-  // const filteredEvents = searchValue ? allEvents.filter((post) => post.title.toUpperCase().includes(
-  //   searchValue.toUpperCase()
-  // )) : events;
 
   return (
     <div className="container-home">
@@ -167,20 +163,14 @@ export default function Dashboard() {
         <form className="formSearchPost" onSubmit={() => { }}>
           <input
             type="text"
-            id="inputSearchPost"
-            placeholder="Search a post"
-            name="searchPost"
+            placeholder="Encontrar eventos"
             className="mb-1"
           />
-          {/* <Button
-            title="Submit"
-            type="submit"
-          /> */}
         </form>
       </div>
 
       {!!events.length && <div>
-        <h2>Eventos on-line</h2>
+        <h2 className="title-events">Eventos on-line</h2>
         <div className="events">
           {
             events.map((event) => (
@@ -194,14 +184,6 @@ export default function Dashboard() {
             ))
           }
         </div>
-        {/* {!searchValue &&
-          <Button
-            title="Load more"
-            handleClick={this.handleToggleButton}
-            disabled={noMoreEvents}
-            type="button"
-          />
-        } */}
       </div>
       }
 
