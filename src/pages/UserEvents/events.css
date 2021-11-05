@@ -1,0 +1,12 @@
+  Header{
+    margin-left: 200px;
+    padding: 1px 16px;
+    width: calc(100% - 200px);
+    
+  }
+
+  @media screen and (max-width: 900px){
+    Header {
+      display: none;
+    }
+  }

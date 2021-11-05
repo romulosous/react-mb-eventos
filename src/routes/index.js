@@ -6,6 +6,7 @@ import SignIn from "../pages/SignIn"
 import SignUp from "../pages/SignUp"
 import Dashboard from "../pages/Dashboard"
 import Home from "../pages/Home"
+import UserEvents from "../pages/UserEvents"
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route exact path="/register" component={SignUp} />
 
       <Route exact path="/dashboard" component={Dashboard} isPrivate />
+      <Route exact path="/events" component={UserEvents} isPrivate />
     </Switch>
   )
 }
