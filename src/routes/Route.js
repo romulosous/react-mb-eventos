@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, useLocation } from "react-router-dom";
 import { AuthContext } from "../contexts/auth"
 
 export default function RouteWrapper({
@@ -8,6 +8,9 @@ export default function RouteWrapper({
   ...rest
 }) {
   const { signed, loading } = useContext(AuthContext)
+
+  const location = useLocation()
+  console.log(location.pathname === "/")
 
 
   if (loading) {
@@ -20,7 +23,7 @@ export default function RouteWrapper({
     return <Redirect to="/login" />
   }
 
-  if (signed && !isPrivate) {
+  if (signed && !isPrivate && location.pathname !== "/") {
     return <Redirect to="/dashboard" />
   }
 

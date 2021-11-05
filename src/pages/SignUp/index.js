@@ -23,7 +23,7 @@ function SignUp() {
   return (
     <div className="container">
       <div className="login">
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <Link to="/">MB Events</Link>
           <h1>Criar uma Conta</h1>
           <input type="text" placeholder="Seu nome" value={name} onChange={(e) => setName(e.target.value)} />

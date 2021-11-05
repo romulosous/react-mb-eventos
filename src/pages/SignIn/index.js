@@ -23,7 +23,7 @@ function SignIn() {
   return (
     <div className="container">
       <div className="login">
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <Link to="/">MB Events</Link>
           <h1>Log in</h1>
           <input type="text" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />

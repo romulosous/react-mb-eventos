@@ -1,0 +1,13 @@
+.container-home {
+  min-height: 100vh;
+  background-color: #eee;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px
+}
+
