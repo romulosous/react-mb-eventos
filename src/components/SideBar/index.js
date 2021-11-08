@@ -6,7 +6,7 @@ import avatar from "../../assets/avatar.png"
 import { Link } from "react-router-dom"
 
 export default function SideBar() {
-  const { user } = useContext(AuthContext)
+  const { user, signOut } = useContext(AuthContext)
   return (
     <div className="sidebar">
       <div>
@@ -23,6 +23,8 @@ export default function SideBar() {
       <Link to="/profile">
         Editar Perfil
       </Link>
+
+      <Link to="/" onClick={() => signOut()} >Deslogar</Link>
 
     </div>
   )
