@@ -4,7 +4,7 @@ import Title from "../../components/Title"
 import SideBar from "../../components/SideBar"
 
 export default function UserEvents() {
-  const [events, setEvents] = useState([1])
+  const [events] = useState([1])
   return (
     <div>
       <SideBar />

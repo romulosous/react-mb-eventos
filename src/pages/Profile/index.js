@@ -14,9 +14,9 @@ export default function Profile() {
   const { user } = useContext(AuthContext)
 
   const [name, setName] = useState(user && user.name)
-  const [email, setEmail] = useState(user && user.email)
+  const [email] = useState(user && user.email)
 
-  const [avatarUrl, setAvatarUrl] = useState(user && user.avatarUrl)
+  const [avatarUrl] = useState(user && user.avatarUrl)
 
   return (
     <div>

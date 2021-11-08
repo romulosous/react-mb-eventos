@@ -10,7 +10,7 @@ export default function SideBar() {
   return (
     <div className="sidebar">
       <div>
-        <img width="80" src={user.avatarUrl === null ? avatar : user.avatarUrl} />
+        <img width="80" src={user.avatarUrl === null ? avatar : user.avatarUrl} alt="avatar" />
       </div>
 
       <Link to="/events">

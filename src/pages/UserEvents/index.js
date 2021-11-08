@@ -7,7 +7,7 @@ import { FiPlus, FiMoreVertical } from "react-icons/fi"
 import { Link } from "react-router-dom"
 
 export default function UserEvents() {
-  const [events, setEvents] = useState([1])
+  const [events] = useState([1])
   return (
     <div>
       <SideBar />
