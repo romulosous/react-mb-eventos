@@ -20,7 +20,7 @@ export default function SideBar() {
         Eventos Inscritos
       </Link>
 
-      <Link to="/user">
+      <Link to="/profile">
         Editar Perfil
       </Link>
 
